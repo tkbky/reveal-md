@@ -43,7 +43,9 @@
               { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
               { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
               { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-              { src: 'plugin/math/math.js', async: true }
+              { src: 'plugin/math/math.js', async: true },
+              { src: 'plugin/chart/Chart.min.js' },
+              { src: 'plugin/chart/csv2chart.js' },
             ];
 
             // default options to init reveal.js
@@ -63,7 +65,7 @@
             options = extend(defaultOptions, options, queryOptions);
             Reveal.initialize(options);
         </script>
-        
+
         {{#scripts}}
           <script src="/scripts/{{.}}"></script>
         {{/scripts}}
